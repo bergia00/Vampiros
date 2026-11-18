@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://bt6ypmoqkkrmg"]
+
+[ext_resource type="Texture2D" uid="uid://cm48eqtinpvm7" path="res://Assets/tumba.png" id="1_rjoyk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(36.84706, 23.505892)
+
+[node name="Tumba1" type="Sprite2D" unique_id=2057161449]
+texture_filter = 1
+scale = Vector2(1.5740741, 1.574074)
+texture = ExtResource("1_rjoyk")
+
+[node name="Area2D" type="StaticBody2D" parent="." unique_id=1344874427]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=928824695]
+position = Vector2(0, 0.31764984)
+shape = SubResource("RectangleShape2D_g4v7s")
