@@ -8,6 +8,8 @@ height = 388.45264
 
 [node name="Enemigo" type="CharacterBody2D" unique_id=956621102]
 scale = Vector2(0.15, 0.15)
+collision_layer = 2
+collision_mask = 7
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1131878112]
 texture = ExtResource("1_x0nhg")

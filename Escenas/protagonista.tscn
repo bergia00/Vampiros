@@ -8,6 +8,7 @@ radius = 11.0
 height = 52.0
 
 [node name="Protagonista" type="CharacterBody2D" unique_id=541571990]
+z_index = 1
 script = ExtResource("1_xmmqn")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1803551928]
@@ -21,3 +22,7 @@ shape = SubResource("CapsuleShape2D_g4v7s")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719268033]
 zoom = Vector2(2, 2)
+
+[node name="CD_Agua" type="Timer" parent="." unique_id=172933206]
+
+[connection signal="timeout" from="CD_Agua" to="." method="_on_cd_agua_timeout"]

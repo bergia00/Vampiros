@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://btj2eelc0dues" path="res://Escenas/tumba_2.tscn" id="4_ktoa8"]
 [ext_resource type="PackedScene" uid="uid://bm4fauend1rwb" path="res://Escenas/protagonista.tscn" id="5_1md0r"]
 [ext_resource type="PackedScene" uid="uid://c1s1yowuslelb" path="res://Escenas/enemigo.tscn" id="6_n3qho"]
+[ext_resource type="Script" uid="uid://dm7mkr4pmlw42" path="res://Escenas/enemigo.gd" id="7_s2ilj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_7xwpo")
@@ -1185,12 +1186,16 @@ position = Vector2(838.41174, 266.5)
 position = Vector2(85, 576)
 collision_mask = 6
 
-[node name="Enemigo" parent="." unique_id=956621102 instance=ExtResource("6_n3qho")]
-position = Vector2(798, 294.00003)
+[node name="Enemigo" parent="." unique_id=956621102 node_paths=PackedStringArray("Jugador") instance=ExtResource("6_n3qho")]
+position = Vector2(775.00006, 313)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 7
+script = ExtResource("7_s2ilj")
+Jugador = NodePath("../Protagonista")
 
-[node name="Enemigo2" parent="." unique_id=1046913033 instance=ExtResource("6_n3qho")]
-position = Vector2(297, 199)
+[node name="Enemigo2" parent="." unique_id=1046913033 node_paths=PackedStringArray("Jugador") instance=ExtResource("6_n3qho")]
+position = Vector2(311, 276)
 collision_layer = 2
-collision_mask = 5
+collision_mask = 7
+script = ExtResource("7_s2ilj")
+Jugador = NodePath("../Protagonista")

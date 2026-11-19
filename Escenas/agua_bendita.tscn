@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://0m5uh1ek44hm"]
+
+[ext_resource type="Script" uid="uid://b8gr6jty4am0b" path="res://Escenas/agua_bendita.gd" id="1_tx0mq"]
+[ext_resource type="Texture2D" uid="uid://h1qqqcqutx65" path="res://Assets/AguaPlaceholder.png" id="2_jeoxl"]
+[ext_resource type="Texture2D" uid="uid://bugpsl7uqhp0y" path="res://Assets/Explosions and Magic/Water splash/spritesheet.png" id="3_0ubvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1m0k"]
+atlas = ExtResource("3_0ubvl")
+region = Rect2(0, 0, 26, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyv6x"]
+atlas = ExtResource("3_0ubvl")
+region = Rect2(26, 0, 26, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4rd6"]
+atlas = ExtResource("3_0ubvl")
+region = Rect2(52, 0, 26, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd11d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jeoxl")
+}],
+"loop": 1,
+"name": &"Default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1m0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyv6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4rd6")
+}],
+"loop": 0,
+"name": &"Splash",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3hjh"]
+radius = 8.032492
+
+[node name="Agua Bendita" type="Area2D" unique_id=1776142374]
+top_level = true
+z_index = 2
+collision_layer = 8
+collision_mask = 6
+script = ExtResource("1_tx0mq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1688924024]
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_dd11d")
+animation = &"Splash"
+autoplay = "Default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=726542903]
+scale = Vector2(1.635, 1.635)
+shape = SubResource("CircleShape2D_i3hjh")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
