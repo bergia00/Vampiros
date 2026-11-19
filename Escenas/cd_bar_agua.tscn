@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c8qapludxxed4"]
+
+[ext_resource type="Texture2D" uid="uid://doy5k6v17m6s6" path="res://Assets/Misc/gems/spritesheets/gems-spritesheet.png" id="1_0tfhq"]
+[ext_resource type="Texture2D" uid="uid://h1qqqcqutx65" path="res://Assets/AguaPlaceholder.png" id="2_d8dya"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x03y8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c643d"]
+bg_color = Color(0.14353754, 0.14353754, 0.14353754, 1)
+corner_detail = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd11d"]
+atlas = ExtResource("1_0tfhq")
+region = Rect2(0, 64, 16, 16)
+
+[node name="CDBarAgua" type="ProgressBar" unique_id=1770698841]
+z_index = 1
+offset_left = -255.0
+offset_top = 104.0
+offset_right = -222.0
+offset_bottom = 137.0
+theme_override_styles/background = SubResource("StyleBoxFlat_x03y8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c643d")
+fill_mode = 2
+show_percentage = false
+
+[node name="Marco" type="Sprite2D" parent="." unique_id=1437468328]
+z_index = -1
+position = Vector2(16.5, 16.5)
+scale = Vector2(2.0625, 2.0625)
+texture = SubResource("AtlasTexture_dd11d")
+
+[node name="Agua" type="Sprite2D" parent="." unique_id=2140423003]
+position = Vector2(9.000015, 13.999992)
+scale = Vector2(0.99999994, 0.99999994)
+texture = ExtResource("2_d8dya")
+
+[node name="Label" type="Label" parent="." unique_id=1036479155]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 33.0
+text = "E"

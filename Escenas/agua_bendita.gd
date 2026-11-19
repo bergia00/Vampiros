@@ -1,7 +1,8 @@
 extends Area2D
-var Velocidad = 150
+class_name Agua
+var Velocidad = 200
 var Direccion = Vector2()
-
+var Daño = 50
 func _physics_process(delta: float) -> void:
 	position += Direccion * Velocidad * delta
 	

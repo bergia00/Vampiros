@@ -50,6 +50,7 @@ animations = [{
 
 [node name="AtaqueEnemigo" type="Area2D" unique_id=1122747891]
 z_index = 2
+collision_layer = 16
 script = ExtResource("1_ts5mn")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=662491590]
@@ -65,4 +66,5 @@ position = Vector2(-46.666626, -6.666748)
 scale = Vector2(20.485, 8.045)
 shape = SubResource("CircleShape2D_i3hjh")
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

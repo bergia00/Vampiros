@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c8337hp8tg0uy"]
+
+[ext_resource type="Texture2D" uid="uid://doy5k6v17m6s6" path="res://Assets/Misc/gems/spritesheets/gems-spritesheet.png" id="1_bimne"]
+[ext_resource type="Texture2D" uid="uid://cmnqj7yvet0q8" path="res://Assets/Baratija_Cruz_de_madera.webp" id="2_bimne"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x03y8"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+corner_detail = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c643d"]
+bg_color = Color(0.14353754, 0.14353754, 0.14353754, 1)
+corner_detail = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dd11d"]
+atlas = ExtResource("1_bimne")
+region = Rect2(0, 64, 16, 16)
+
+[node name="CDBarCruz" type="ProgressBar" unique_id=1015580819]
+z_index = 1
+offset_left = -255.0
+offset_top = 104.0
+offset_right = -222.0
+offset_bottom = 137.0
+theme_override_styles/background = SubResource("StyleBoxFlat_x03y8")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c643d")
+fill_mode = 2
+show_percentage = false
+
+[node name="Marco" type="Sprite2D" parent="." unique_id=489854326]
+z_index = -1
+position = Vector2(16.5, 16.5)
+scale = Vector2(2.0625, 2.0625)
+texture = SubResource("AtlasTexture_dd11d")
+
+[node name="Cruz" type="Sprite2D" parent="." unique_id=415868656]
+position = Vector2(13, 15)
+scale = Vector2(0.10833334, 0.10833334)
+texture = ExtResource("2_bimne")
+
+[node name="Label" type="Label" parent="." unique_id=269021924]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 10.0
+offset_right = 35.0
+offset_bottom = 33.0
+text = "Q"
