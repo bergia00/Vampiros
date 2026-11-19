@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cp6a256o4e5bc"
-path="res://.godot/imported/jarrón.png-fd3b59228bb8ce20db77d93bcd18ca17.ctex"
+uid="uid://v0fkqrrv5x4s"
+path="res://.godot/imported/decorative.png-b7e78e4c6ff552fb774b0eede1cd43e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/jarrón.png"
-dest_files=["res://.godot/imported/jarrón.png-fd3b59228bb8ce20db77d93bcd18ca17.ctex"]
+source_file="res://Assets/Tileset/decorative.png"
+dest_files=["res://.godot/imported/decorative.png-b7e78e4c6ff552fb774b0eede1cd43e4.ctex"]
 
 [params]
 
