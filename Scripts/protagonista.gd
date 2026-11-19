@@ -3,7 +3,7 @@ var velocidad = 150
 const AGUA = preload("res://Escenas/agua_bendita.tscn")
 var AguaLista = true
 var CooldownAgua = 3
-var EstacaLista = true
+6var EstacaLista = true
 var CooldownEstaca = 6
 var CruzLista = true
 var CooldownCruz = 25
@@ -29,12 +29,28 @@ func _physics_process(delta):
 func Mover():
 	direccion.x = Input.get_action_strength("mover_derecha") - Input.get_action_strength("mover_izquierda")
 	direccion.y = Input.get_action_strength("mover_abajo") - Input.get_action_strength("mover_arriba")
+	if direccion != Vector2.ZERO:
+		ultima_direccion = direccion.normalized()
 	velocity = direccion.normalized() * velocidad
-	if Input.is_action_just_pressed("mover_derecha"):
-		$Sprite2D.flip_h = false
-	elif Input.is_action_just_pressed("mover_izquierda"):
-		$Sprite2D.flip_h = true
 	move_and_slide()
+
+func Animar():
+	if direccion == Vector2.ZERO:
+		$AnimatedSprite2D.animation = "mover_abajo"
+		$AnimatedSprite2D.frame = 0
+		$AnimatedSprite2D.pause()
+		return
+	# Si te movés en diagonal, gana el eje con más peso
+	if abs(direccion.x) > abs(direccion.y):
+		if direccion.x > 0:
+			$AnimatedSprite2D.play("mover_derecha")
+		else:
+			$AnimatedSprite2D.play("mover_izquierda")
+	else:
+		if direccion.y > 0:
+			$AnimatedSprite2D.play("mover_abajo")
+		else:
+			$AnimatedSprite2D.play("mover_arriba")
 
 func TirarAgua():
 	AguaLista = false
