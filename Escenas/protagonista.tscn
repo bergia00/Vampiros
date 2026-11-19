@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bm4fauend1rwb"]
 
 [ext_resource type="Script" uid="uid://cs62vvbea7nf5" path="res://Scripts/protagonista.gd" id="1_xmmqn"]
-[ext_resource type="Texture2D" uid="uid://ce5y0kxtkqgk5" path="res://Assets/protacorreatras-sheet.png" id="2_3m7yj"]
+6[ext_resource type="Texture2D" uid="uid://ce5y0kxtkqgk5" path="res://Assets/protacorreatras-sheet.png" id="2_3m7yj"]
 [ext_resource type="Texture2D" uid="uid://ybt6yt7utd7m" path="res://Assets/protacaminandoadelante.png" id="3_fj705"]
 [ext_resource type="Texture2D" uid="uid://ci6xwqp4gudff" path="res://Assets/protaderecha-sheet.png" id="4_3m7yj"]
 [ext_resource type="Texture2D" uid="uid://dlje8m7pbynlx" path="res://Assets/protaizquierda-sheet.png" id="5_fj705"]
@@ -184,10 +184,68 @@ shape = SubResource("CapsuleShape2D_g4v7s")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=719268033]
 zoom = Vector2(2, 2)
 
+[node name="BarraVida" type="ProgressBar" parent="." unique_id=896927715]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -282.0
+offset_top = -159.0
+offset_right = -181.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+theme_override_styles/background = SubResource("StyleBoxFlat_dd11d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_i3hjh")
+rounded = true
+
 [node name="CD_Agua" type="Timer" parent="." unique_id=172933206]
+one_shot = true
+
+[node name="CD_Estaca" type="Timer" parent="." unique_id=877460420]
+one_shot = true
+
+[node name="CD_Cruz" type="Timer" parent="." unique_id=1927852122]
+one_shot = true
+
+[node name="CDBarAgua" parent="." unique_id=1770698841 instance=ExtResource("3_3m7yj")]
+offset_left = -280.0
+offset_top = 120.0
+offset_right = -247.0
+offset_bottom = 153.0
+
+[node name="CDBarCruz" parent="." unique_id=1015580819 instance=ExtResource("4_fj705")]
+offset_left = -180.0
+offset_top = 120.0
+offset_right = -147.0
+offset_bottom = 153.0
+
+[node name="CDBarEstaca" parent="." unique_id=1471930474 instance=ExtResource("5_4j12b")]
+offset_left = -230.0
+offset_top = 120.0
+offset_right = -197.0
+offset_bottom = 153.0
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1557981782]
+collision_layer = 0
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1431514624]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("CapsuleShape2D_g4v7s")
+
+[node name="Invulnerabilidad" type="Timer" parent="." unique_id=1510829094]
+wait_time = 0.2
+one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1703822194]
 sprite_frames = SubResource("SpriteFrames_mkh1j")
 animation = &"mover_arriba"
 
 [connection signal="timeout" from="CD_Agua" to="." method="_on_cd_agua_timeout"]
+[connection signal="timeout" from="CD_Estaca" to="." method="_on_cd_estaca_timeout"]
+[connection signal="timeout" from="CD_Cruz" to="." method="_on_cd_cruz_timeout"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="timeout" from="Invulnerabilidad" to="." method="_on_invulnerabilidad_timeout"]

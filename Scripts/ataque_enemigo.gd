@@ -1,4 +1,5 @@
 extends Area2D
+var Daño = 0
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	queue_free()
