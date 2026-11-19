@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dcpc26q16m44f"]
+
+[ext_resource type="Texture2D" uid="uid://ccnvqpeg8a2lx" path="res://Assets/Explosions and Magic/Grotto-escape-2-FX/spritesheets/slash-horizontal.png" id="1_q7abp"]
+[ext_resource type="Script" uid="uid://bprs20meb2wpq" path="res://Scripts/ataque_enemigo.gd" id="1_ts5mn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1md0r"]
+atlas = ExtResource("1_q7abp")
+region = Rect2(0, 0, 65, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3qho"]
+atlas = ExtResource("1_q7abp")
+region = Rect2(65, 0, 65, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8mww"]
+atlas = ExtResource("1_q7abp")
+region = Rect2(130, 0, 65, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1m0k"]
+atlas = ExtResource("1_q7abp")
+region = Rect2(195, 0, 65, 40)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nyv6x"]
+atlas = ExtResource("1_q7abp")
+region = Rect2(260, 0, 65, 40)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dd11d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1md0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3qho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8mww")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b1m0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nyv6x")
+}],
+"loop": 0,
+"name": &"Ataque",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i3hjh"]
+
+[node name="AtaqueEnemigo" type="Area2D" unique_id=1122747891]
+z_index = 2
+script = ExtResource("1_ts5mn")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=662491590]
+scale = Vector2(8, 8)
+sprite_frames = SubResource("SpriteFrames_dd11d")
+animation = &"Ataque"
+autoplay = "Ataque"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=28481089]
+position = Vector2(-46.666626, -6.666748)
+scale = Vector2(20.485, 8.045)
+shape = SubResource("CircleShape2D_i3hjh")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
