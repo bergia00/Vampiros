@@ -283,6 +283,7 @@ size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_dd11d")
 theme_override_styles/fill = SubResource("StyleBoxFlat_i3hjh")
 rounded = true
+show_percentage = false
 
 [node name="CD_Agua" type="Timer" parent="." unique_id=172933206]
 one_shot = true
@@ -302,10 +303,10 @@ offset_bottom = 153.0
 
 [node name="CDBarCruz" parent="." unique_id=1015580819 instance=ExtResource("4_fj705")]
 z_index = 10
-offset_left = -180.0
-offset_top = 120.0
-offset_right = -147.0
-offset_bottom = 153.0
+offset_left = -235.0
+offset_top = 119.0
+offset_right = -202.0
+offset_bottom = 152.0
 
 [node name="CDBarEstaca" parent="." unique_id=1471930474 instance=ExtResource("5_4j12b")]
 z_index = 10

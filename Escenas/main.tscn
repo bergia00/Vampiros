@@ -333,9 +333,9 @@ Introducción a las mecanicas de combate y a las primeras amenazas. El jugador s
 
 Emociones esperadas : Curiosidad e intriga por explorar el castillo, poca presencia de tensión.
 
-Agua bendita : proyectil de agua con cooldwon que salpica y daña a los enemigos cercanos. 
+Agua bendita : Proyectil de agua con cooldwon que salpica y daña a los enemigos cercanos. 
 
-Crucifijo :  reduce un porcentaje del daño recibido, habilidad activable
+Crucifijo :  Reduce un porcentaje del daño recibido, habilidad activable
 
 
 
@@ -372,7 +372,7 @@ Emociones esperadas : Tensión elevada, ansiedad, presión y satisfacción al de
 [node name="libro4" parent="." unique_id=1459204780 instance=ExtResource("27_h1sxn")]
 position = Vector2(363, -2152)
 texto = "Room 5 
-Luego del último enfrentamiento se llega a esta habitación aislada y pequeña.No hay enemigo , ni combate, solo objetos que se te hacen familiares, con elementos interactivos y sobre todo el más relevante, una carta de tu hermana que presenta una gran revelación. 
+Luego del último enfrentamiento se llega a esta habitación aislada y pequeña. No hay enemigo , ni combate, dentro del cuarto encuentras una carta de tu hermana que presenta una gran revelación. 
 
 Esta habitación que funciona como momento de pausa despues del enfrentamiento  con la Vampira y se busca trasladar la atención del desafío jugable a la narrativa. 
 
