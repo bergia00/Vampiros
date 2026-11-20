@@ -1,8 +1,12 @@
 [gd_scene format=3 uid="uid://0m5uh1ek44hm"]
 
 [ext_resource type="Script" uid="uid://b8gr6jty4am0b" path="res://Escenas/agua_bendita.gd" id="1_tx0mq"]
-[ext_resource type="Texture2D" uid="uid://h1qqqcqutx65" path="res://Assets/AguaPlaceholder.png" id="2_jeoxl"]
+[ext_resource type="Texture2D" uid="uid://i6r0lwkgdsdo" path="res://Assets/aguabendita.png" id="2_tx0mq"]
 [ext_resource type="Texture2D" uid="uid://bugpsl7uqhp0y" path="res://Assets/Explosions and Magic/Water splash/spritesheet.png" id="3_0ubvl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jeoxl"]
+atlas = ExtResource("2_tx0mq")
+region = Rect2(0, 0, 40, 40)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b1m0k"]
 atlas = ExtResource("3_0ubvl")
@@ -20,7 +24,7 @@ region = Rect2(52, 0, 26, 21)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jeoxl")
+"texture": SubResource("AtlasTexture_jeoxl")
 }],
 "loop": 1,
 "name": &"Default",
@@ -53,8 +57,9 @@ script = ExtResource("1_tx0mq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1688924024]
 rotation = 1.5707964
+scale = Vector2(0.665, 0.665)
 sprite_frames = SubResource("SpriteFrames_dd11d")
-animation = &"Splash"
+animation = &"Default"
 autoplay = "Default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=726542903]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bqbvm1667xd1j"]
 
 [ext_resource type="Texture2D" uid="uid://doy5k6v17m6s6" path="res://Assets/Misc/gems/spritesheets/gems-spritesheet.png" id="1_ly087"]
-[ext_resource type="Texture2D" uid="uid://bvrej5jthudl3" path="res://Assets/Gothicvania/Misc/Dagger/dagger.png" id="2_ly087"]
+[ext_resource type="Texture2D" uid="uid://eovyhahd2m7n" path="res://Assets/estaca.png" id="2_ly087"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x03y8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -16,6 +16,7 @@ atlas = ExtResource("1_ly087")
 region = Rect2(0, 64, 16, 16)
 
 [node name="CDBarEstaca" type="ProgressBar" unique_id=1471930474]
+visible = false
 z_index = 1
 offset_left = -255.0
 offset_top = 104.0
@@ -33,9 +34,9 @@ scale = Vector2(2.0625, 2.0625)
 texture = SubResource("AtlasTexture_dd11d")
 
 [node name="Estaca" type="Sprite2D" parent="." unique_id=1685200743]
-position = Vector2(14.000015, 14)
-rotation = -0.7853982
-scale = Vector2(0.99999994, 0.99999994)
+position = Vector2(16.000008, 17)
+rotation = -4.694936
+scale = Vector2(0.72499955, 0.74999994)
 texture = ExtResource("2_ly087")
 
 [node name="Label" type="Label" parent="." unique_id=613750816]

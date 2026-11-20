@@ -2,9 +2,20 @@
 
 [ext_resource type="Script" uid="uid://dts2uh1aq1ptx" path="res://Scripts/carta.gd" id="1_bhn44"]
 [ext_resource type="Texture2D" uid="uid://cphn24rxemp1k" path="res://Assets/libro2.png" id="2_pq6sv"]
+[ext_resource type="FontFile" uid="uid://7qy3wdxrsd05" path="res://Assets/fuentes/minecraft/Minecraft.ttf" id="3_pq6sv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flvvg"]
 size = Vector2(37.41941, 48.267864)
+
+[sub_resource type="LabelSettings" id="LabelSettings_lo201"]
+font = ExtResource("3_pq6sv")
+font_size = 23
+font_color = Color(0.77254903, 0.7294118, 0.45490196, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_pq6sv"]
+font = ExtResource("3_pq6sv")
+font_size = 21
+font_color = Color(0.8156863, 0.69803923, 0.41960785, 1)
 
 [node name="carta" type="Area2D" unique_id=248332298]
 scale = Vector2(0.725, 0.725)
@@ -19,32 +30,33 @@ rotation = 0.86219263
 shape = SubResource("RectangleShape2D_flvvg")
 
 [node name="tecla" type="Label" parent="." unique_id=1663879158]
-offset_left = -14.0
-offset_top = -41.0
-offset_right = 21.0
-offset_bottom = -18.0
+offset_left = -12.413792
+offset_top = 34.482758
+offset_right = 5.72414
+offset_bottom = 58.482758
+text = "F"
+label_settings = SubResource("LabelSettings_lo201")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=863591030]
-layer = 10
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=412980064]
+custom_minimum_size = Vector2(100, 100)
+clip_contents = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -93.793106
+offset_top = -252.41379
+offset_right = 93.793106
+offset_bottom = -77.241394
+grow_horizontal = 2
+size_flags_horizontal = 3
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1678188509]
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_left = -74.0
-offset_top = -209.0
-offset_right = 65.0
-offset_bottom = -671.0
-grow_vertical = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=1214590017]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1284655333]
 layout_mode = 2
-theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 12
-theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 12
 
-[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=1540546683]
-custom_minimum_size = Vector2(100, 0)
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=1113028302]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_pq6sv")
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 3

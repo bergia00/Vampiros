@@ -337,7 +337,7 @@ Agua bendita : proyectil de agua con cooldwon que salpica y daña a los enemigos
 
 Crucifijo :  reduce un porcentaje del daño recibido, habilidad activable
 
-Estaca : arma cuerpo a cuerpo , capaz de eliminar a enemigos de un solo golpe, pero es lenta y puedo fallar con win-up
+
 
 "
 
@@ -380,6 +380,11 @@ Emociones esperadas : curiosidad, incertidumbre, sorpresa y desconcierto ante la
 
 [node name="carta" parent="." unique_id=248332298 instance=ExtResource("28_sqh0o")]
 position = Vector2(280, -1936)
+texto = "Querida Condesa,
+
+A pesar de lo inimaginable que es tu oscuro mundo para una mortal como yo, he aprendido a convivir con él para estar a tu lado. Aunque tu corazón no palpite, el mío lo hará por las dos.
+
+Es por todo el amor que te tengo que me duele desaparecer de esta manera, pero no puedo arrastrarte conmigo. Nos volveremos a ver, amada."
 
 [node name="Musica" type="AudioStreamPlayer" parent="." unique_id=1362991393]
 stream = SubResource("AudioStreamMP3_sqh0o")
