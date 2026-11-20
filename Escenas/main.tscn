@@ -318,7 +318,7 @@ autoplay = "default"
 frame_progress = 0.11314301
 
 [node name="Vampiresa" parent="." unique_id=1952121165 node_paths=PackedStringArray("Jugador") instance=ExtResource("23_xgh3l")]
-position = Vector2(-136, 310)
+position = Vector2(1062, -2086)
 scale = Vector2(0.205, 0.205)
 Jugador = NodePath("../Protagonista")
 
