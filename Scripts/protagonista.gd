@@ -90,14 +90,25 @@ func _on_cd_cruz_timeout() -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D):
+	print("Área detectada: ", area.name)
+	print("Pertenece a: ", area.get_parent().name)
+
+	if not "Daño" in area:
+		print("Esta área no tiene variable Daño")
+		return
+
+	print("Daño recibido: ", area.Daño)
+
 	if Invulnerable == false and Escudo == false:
-		Invulnerable  = true
+		Invulnerable = true
 		$Invulnerabilidad.start()
 		Vida -= area.Daño
 		ActualizarVida()
+
 	elif Invulnerable == false and Escudo == true:
 		Escudo = false
 		$Escudo.play("EscudoRoto")
+		
 func _on_invulnerabilidad_timeout() -> void:
 	Invulnerable = false
 

@@ -1,5 +1,4 @@
 extends CharacterBody2D
-
 @export var Jugador: CharacterBody2D
 var velocidad = 50
 var PuedeAtacar = true
@@ -41,15 +40,18 @@ func on_hit(daño_recibido: int):
 
 func Disparar():
 	var instanciaProyectil = PROYECTIL.instantiate()
-	instanciaProyectil.position = position.direction_to(Jugador.position) * 1
-	instanciaProyectil.Direccion = (Jugador.position - position).normalized()
-	instanciaProyectil.rotation = position.direction_to(Jugador.position).angle()
-	add_child(instanciaProyectil)
+	instanciaProyectil.Tirador = self
+	instanciaProyectil.Daño = Daño
+	instanciaProyectil.Direccion = (Jugador.global_position - global_position).normalized()
+	instanciaProyectil.rotation = instanciaProyectil.Direccion.angle()
+	get_parent().add_child(instanciaProyectil)
+	instanciaProyectil.global_position = global_position
 	$CD_Proyectil.start(CooldownDisparo)
 	PuedeDisparar = false
+	
 func _on_timer_timeout() -> void:
 	PuedeAtacar = true
-
+	
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	Vida -= area.Daño
 	print(Vida)
