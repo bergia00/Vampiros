@@ -33,7 +33,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c643d"]
-radius = 7.125866
+radius = 4.523873
 
 [node name="Proyectil" type="Area2D" unique_id=655305227]
 scale = Vector2(3.945, 3.945)
@@ -42,12 +42,12 @@ collision_mask = 5
 script = ExtResource("1_lm3un")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1961368516]
-position = Vector2(-4.1240234, -0.22093943)
-scale = Vector2(0.57259166, 0.5746533)
+position = Vector2(-3.8022814, -0.5069711)
+scale = Vector2(0.4557863, 0.36162412)
 sprite_frames = SubResource("SpriteFrames_i3hjh")
 autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1783964386]
-position = Vector2(2.281369, 0)
+position = Vector2(1.7743981, -0.5069709)
 scale = Vector2(0.585, 0.585)
 shape = SubResource("CircleShape2D_c643d")
