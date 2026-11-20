@@ -264,6 +264,7 @@ shape = SubResource("CapsuleShape2D_g4v7s")
 zoom = Vector2(2, 2)
 
 [node name="BarraVida" type="ProgressBar" parent="." unique_id=896927715]
+z_index = 10
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -290,18 +291,21 @@ one_shot = true
 one_shot = true
 
 [node name="CDBarAgua" parent="." unique_id=1770698841 instance=ExtResource("3_3m7yj")]
+z_index = 10
 offset_left = -280.0
 offset_top = 120.0
 offset_right = -247.0
 offset_bottom = 153.0
 
 [node name="CDBarCruz" parent="." unique_id=1015580819 instance=ExtResource("4_fj705")]
+z_index = 10
 offset_left = -180.0
 offset_top = 120.0
 offset_right = -147.0
 offset_bottom = 153.0
 
 [node name="CDBarEstaca" parent="." unique_id=1471930474 instance=ExtResource("5_4j12b")]
+z_index = 10
 offset_left = -230.0
 offset_top = 120.0
 offset_right = -197.0
