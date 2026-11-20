@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://d3i2rea4r6c71" path="res://Assets/Tileset/candleB_02.png" id="19_eyox0"]
 [ext_resource type="Texture2D" uid="uid://deajnf5axd8yx" path="res://Assets/Tileset/candleA_01.png" id="21_gy4cw"]
 [ext_resource type="Texture2D" uid="uid://bg5i82yg760yj" path="res://Assets/Tileset/candleA_04.png" id="22_h1sxn"]
+[ext_resource type="PackedScene" uid="uid://dciwj5vrkpnki" path="res://Escenas/vampiresa.tscn" id="23_xgh3l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_7xwpo")
@@ -4677,3 +4678,8 @@ scale = Vector2(1.3049437, 1.3049437)
 sprite_frames = SubResource("SpriteFrames_fcnqv")
 autoplay = "default"
 frame_progress = 0.11314301
+
+[node name="Vampiresa" parent="." unique_id=1952121165 node_paths=PackedStringArray("Jugador") instance=ExtResource("23_xgh3l")]
+position = Vector2(-136, 310)
+scale = Vector2(0.205, 0.205)
+Jugador = NodePath("../Protagonista")
