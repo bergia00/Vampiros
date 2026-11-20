@@ -98,6 +98,8 @@ func _on_hurtbox_area_entered(area: Area2D):
 	elif Invulnerable == false and Escudo == true:
 		Escudo = false
 		$Escudo.play("EscudoRoto")
+	if Vida <= 0:
+		get_tree().change_scene_to_file("res://Escenas/muerte.tscn")
 func _on_invulnerabilidad_timeout() -> void:
 	Invulnerable = false
 
