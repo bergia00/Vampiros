@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://by20xj3dj3dam"]
+
+[ext_resource type="Script" uid="uid://ch25dr462vss1" path="res://Escenas/pinches_1.gd" id="1_cjevo"]
+[ext_resource type="Script" uid="uid://nvv4p7goy0nt" path="res://Scripts/stop.gd" id="2_h2wij"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(27.891907, 14.27027)
+
+[node name="pinches1" type="Area2D" unique_id=1296086611]
+scale = Vector2(3.0833333, 3.0833333)
+script = ExtResource("1_cjevo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1855107337]
+position = Vector2(-6.1621704, 27.891891)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=2012312227]
+wait_time = 2.6
+autostart = true
+
+[node name="Stop" type="Timer" parent="." unique_id=314522956]
+script = ExtResource("2_h2wij")
+
+[connection signal="Stop" from="." to="Stop" method="_on_pinches_1_stop"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="Frena" from="Stop" to="." method="_on_stop_frena"]
+[connection signal="timeout" from="Stop" to="Stop" method="_on_timeout"]
