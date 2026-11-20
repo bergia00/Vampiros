@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://ccnvqpeg8a2lx" path="res://Assets/Explosions and Magic/Grotto-escape-2-FX/spritesheets/slash-horizontal.png" id="1_q7abp"]
 [ext_resource type="Script" uid="uid://bprs20meb2wpq" path="res://Scripts/ataque_enemigo.gd" id="1_ts5mn"]
+[ext_resource type="AudioStream" uid="uid://dlupb5fs4bjfb" path="res://Assets/SFX/efecto que hacen los enemigos vampiros cuando golpean.mp3" id="3_k46gn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1md0r"]
 atlas = ExtResource("1_q7abp")
@@ -65,6 +66,10 @@ frame_progress = 1.0
 position = Vector2(-46.666626, -6.666748)
 scale = Vector2(20.485, 8.045)
 shape = SubResource("CircleShape2D_i3hjh")
+
+[node name="SonidoGolpe" type="AudioStreamPlayer2D" parent="." unique_id=1419438035]
+stream = ExtResource("3_k46gn")
+autoplay = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

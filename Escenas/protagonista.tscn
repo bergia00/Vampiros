@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://dlje8m7pbynlx" path="res://Assets/protaizquierda-sheet.png" id="5_y1jt0"]
 [ext_resource type="Texture2D" uid="uid://cssn3wcfub7rp" path="res://Assets/Explosions and Magic/Grotto-escape-2-FX/spritesheets/energy-shield.png" id="9_fgm5s"]
 [ext_resource type="Texture2D" uid="uid://bfq87wtnrnkn7" path="res://Assets/Explosions and Magic/Grotto-escape-2-FX/spritesheets/energy-smack.png" id="10_mddbv"]
+[ext_resource type="AudioStream" uid="uid://buqt4ewcxys3o" path="res://Assets/SFX/efecto que hace la vampira cuando trata de goleparte.mp3" id="11_y1jt0"]
+[ext_resource type="AudioStream" uid="uid://c4m2g50gn6f7u" path="res://Assets/SFX/efecto del agua bendita.mp3" id="12_1fqrd"]
+[ext_resource type="AudioStream" uid="uid://cslaotr4han83" path="res://Assets/SFX/efecto del escudo.mp3" id="13_aieph"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_c747u"]
 atlas = ExtResource("2_rey10")
@@ -280,6 +283,7 @@ size_flags_horizontal = 0
 theme_override_styles/background = SubResource("StyleBoxFlat_dd11d")
 theme_override_styles/fill = SubResource("StyleBoxFlat_i3hjh")
 rounded = true
+show_percentage = false
 
 [node name="CD_Agua" type="Timer" parent="." unique_id=172933206]
 one_shot = true
@@ -299,10 +303,10 @@ offset_bottom = 153.0
 
 [node name="CDBarCruz" parent="." unique_id=1015580819 instance=ExtResource("4_fj705")]
 z_index = 10
-offset_left = -180.0
-offset_top = 120.0
-offset_right = -147.0
-offset_bottom = 153.0
+offset_left = -235.0
+offset_top = 119.0
+offset_right = -202.0
+offset_bottom = 152.0
 
 [node name="CDBarEstaca" parent="." unique_id=1471930474 instance=ExtResource("5_4j12b")]
 z_index = 10
@@ -313,7 +317,7 @@ offset_bottom = 153.0
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1557981782]
 collision_layer = 0
-collision_mask = 16
+collision_mask = 18
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1431514624]
 position = Vector2(-0.5, -0.5)
@@ -329,6 +333,15 @@ position = Vector2(1, -4)
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_18067")
 animation = &"EscudoActivo"
+
+[node name="SonidoGolpe" type="AudioStreamPlayer2D" parent="." unique_id=173226243]
+stream = ExtResource("11_y1jt0")
+
+[node name="SonidoAgua" type="AudioStreamPlayer2D" parent="." unique_id=1623572863]
+stream = ExtResource("12_1fqrd")
+
+[node name="SonidoEscudo" type="AudioStreamPlayer2D" parent="." unique_id=1789269513]
+stream = ExtResource("13_aieph")
 
 [connection signal="timeout" from="CD_Agua" to="." method="_on_cd_agua_timeout"]
 [connection signal="timeout" from="CD_Estaca" to="." method="_on_cd_estaca_timeout"]

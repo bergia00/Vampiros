@@ -1,32 +1,59 @@
 extends CharacterBody2D
-
 @export var Jugador: CharacterBody2D
 var velocidad = 50
 var PuedeAtacar = true
 var CooldownAtaque = 2
 const ATAQUE = preload("res://Escenas/ataque_enemigo.tscn")
 const PROYECTIL = preload("res://Escenas/proyectil.tscn")
-var PuedeDisparar =  true
+var PuedeDisparar = true
 var Daño = 20
 var Vida = 500
 var CooldownDisparo = 5
+var PrimeraRisa = true
+var MirandoDerecha = true
+
+@onready var animacion: AnimatedSprite2D = $AnimatedSprite2D
+
 func _process(_delta: float) -> void:
 	var DistanciaJugador = position.distance_to(Jugador.position)
+	if PrimeraRisa and DistanciaJugador < 300:
+		$Risa.play()
+		PrimeraRisa = false
+
 	if DistanciaJugador < 75:
 		Atacar()
 	elif DistanciaJugador < 200 and PuedeDisparar:
 		Disparar()
-	elif DistanciaJugador < 300: 
+	elif DistanciaJugador < 300:
 		Perseguir()
 	else:
-		pass
+		Quieto()
 	if Vida <= 0:
 		queue_free()
+
 func Perseguir():
 	velocity = position.direction_to(Jugador.position) * velocidad
 	move_and_slide()
+	if velocity.x > 0:
+		MirandoDerecha = true
+	elif velocity.x < 0:
+		MirandoDerecha = false
+	if MirandoDerecha:
+		animacion.play("caminar_derecha")
+	else:
+		animacion.play("caminar_izquierda")
+
+func Quieto():
+	velocity = Vector2.ZERO
+	if MirandoDerecha:
+		animacion.animation = "caminar_derecha"
+	else:
+		animacion.animation = "caminar_izquierda"
+	animacion.stop()
+	animacion.frame = 0
 
 func Atacar():
+	Quieto()
 	if PuedeAtacar == true:
 		PuedeAtacar = false
 		$CD_Ataque.start(CooldownAtaque)
@@ -35,18 +62,23 @@ func Atacar():
 		instanciaAtaque.rotation = position.direction_to(Jugador.position).angle()
 		instanciaAtaque.Daño = Daño
 		add_child(instanciaAtaque)
+
 func on_hit(daño_recibido: int):
 	Vida -= daño_recibido
 	print(Vida)
 
 func Disparar():
+	Quieto()
 	var instanciaProyectil = PROYECTIL.instantiate()
-	instanciaProyectil.position = position.direction_to(Jugador.position) * 1
-	instanciaProyectil.Direccion = (Jugador.position - position).normalized()
-	instanciaProyectil.rotation = position.direction_to(Jugador.position).angle()
-	add_child(instanciaProyectil)
+	instanciaProyectil.Tirador = self
+	instanciaProyectil.Daño = Daño
+	instanciaProyectil.Direccion = (Jugador.global_position - global_position).normalized()
+	instanciaProyectil.rotation = instanciaProyectil.Direccion.angle()
+	get_parent().add_child(instanciaProyectil)
+	instanciaProyectil.global_position = global_position
 	$CD_Proyectil.start(CooldownDisparo)
 	PuedeDisparar = false
+
 func _on_timer_timeout() -> void:
 	PuedeAtacar = true
 
@@ -54,6 +86,9 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 	Vida -= area.Daño
 	print(Vida)
 
-
 func _on_cd_proyectil_timeout() -> void:
 	PuedeDisparar = true
+
+func _on_cd_risa_timeout() -> void:
+	if Jugador and position.distance_to(Jugador.position) < 200:
+		$Risa.play()

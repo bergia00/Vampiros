@@ -7,21 +7,44 @@ var CooldownAtaque = 2
 const ATAQUE = preload("res://Escenas/ataque_enemigo.tscn")
 var Daño = 10
 var Vida = 100
+var MirandoDerecha = true
+
+@onready var animacion: AnimatedSprite2D = $AnimatedSprite2D
+
 func _process(_delta: float) -> void:
 	var DistanciaJugador = position.distance_to(Jugador.position)
 	if DistanciaJugador < 75:
 		Atacar()
-	elif DistanciaJugador < 300: 
+	elif DistanciaJugador < 300:
 		Perseguir()
 	else:
-		pass
+		Quieto()
 	if Vida <= 0:
 		queue_free()
+
 func Perseguir():
 	velocity = position.direction_to(Jugador.position) * velocidad
 	move_and_slide()
+	if velocity.x > 0:
+		MirandoDerecha = true
+	elif velocity.x < 0:
+		MirandoDerecha = false
+	if MirandoDerecha:
+		animacion.play("caminar_derecha")
+	else:
+		animacion.play("caminar_izquierda")
+
+func Quieto():
+	velocity = Vector2.ZERO
+	if MirandoDerecha:
+		animacion.animation = "caminar_derecha"
+	else:
+		animacion.animation = "caminar_izquierda"
+	animacion.stop()
+	animacion.frame = 0
 
 func Atacar():
+	Quieto()
 	if PuedeAtacar == true:
 		PuedeAtacar = false
 		$CD_Ataque.start(CooldownAtaque)
@@ -30,9 +53,11 @@ func Atacar():
 		instanciaAtaque.rotation = position.direction_to(Jugador.position).angle()
 		instanciaAtaque.Daño = Daño
 		add_child(instanciaAtaque)
+
 func on_hit(daño_recibido: int):
 	Vida -= daño_recibido
 	print(Vida)
+
 func _on_timer_timeout() -> void:
 	PuedeAtacar = true
 

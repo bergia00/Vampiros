@@ -35,6 +35,7 @@ func Mover():
 	direccion.y = Input.get_action_strength("mover_abajo") - Input.get_action_strength("mover_arriba")
 	velocity = direccion.normalized() * velocidad
 	move_and_slide()
+	
 func Animar():
 	if direccion == Vector2.ZERO:
 		$AnimatedSprite2D.animation = "mover_abajo"
@@ -57,6 +58,7 @@ func Animar():
 	
 func TirarAgua():
 	AguaLista = false
+	$SonidoAgua.play()
 	$CD_Agua.start(CooldownAgua)
 	var instanciaAgua = AGUA.instantiate()
 	instanciaAgua.position = position
@@ -66,12 +68,15 @@ func TirarAgua():
 func UsarEstaca():
 	EstacaLista = false
 	$CD_Estaca.start(CooldownEstaca)
+	
 func UsarCruz():
 	CruzLista = false
 	$CD_Cruz.start(CooldownCruz)
 	Escudo = true
 	$Escudo.visible = true
+	$SonidoEscudo.play()
 	$Escudo.play("EscudoActivo")
+	
 func ActualizarVida():
 	Vida = clampi(Vida, 0, VidaMaxima)
 	$BarraVida.value = Vida
@@ -81,6 +86,7 @@ func ActualizarCooldowns():
 	$CDBarAgua.value = $CD_Agua.time_left
 	$CDBarCruz.value =  $CD_Cruz.time_left
 	$CDBarEstaca.value =  $CD_Estaca.time_left
+	
 func _on_cd_agua_timeout() -> void:
 	AguaLista = true
 func _on_cd_estaca_timeout() -> void:
@@ -91,14 +97,26 @@ func _on_cd_cruz_timeout() -> void:
 
 		
 func _on_hurtbox_area_entered(area: Area2D):
-	if Invulnerable == false and Escudo == false and area.Daño > 0:
+	print("Área detectada: ", area.name)
+	print("Pertenece a: ", area.get_parent().name)
+
+	if not "Daño" in area:
+		print("Esta área no tiene variable Daño")
+		return
+
+	print("Daño recibido: ", area.Daño)
+
+	if Invulnerable == false and Escudo == false:
+		Invulnerable = true
+		$Invulnerabilidad.start()
+		$SonidoGolpe.play()
 		Vida -= area.Daño
 		ActualizarVida()
-	elif Invulnerable == false and Escudo == true and area.Daño > 0:
+
+	elif Invulnerable == false and Escudo == true:
 		Escudo = false
 		$Escudo.play("EscudoRoto")
-	if Vida <= 0:
-		get_tree().change_scene_to_file("res://Escenas/muerte.tscn")
+		
 func _on_invulnerabilidad_timeout() -> void:
 	Invulnerable = false
 
