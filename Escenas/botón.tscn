@@ -32,7 +32,7 @@ animations = [{
 size = Vector2(12.2610655, 12.261038)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
-size = Vector2(82.76221, 49.810486)
+size = Vector2(53.642162, 32.185287)
 
 [node name="Botón" type="Area2D" unique_id=361627626]
 scale = Vector2(1.3049437, 1.3049437)
@@ -49,16 +49,17 @@ position = Vector2(-0.7663269, -3.831604)
 shape = SubResource("RectangleShape2D_5s0fj")
 
 [node name="Rejas" type="StaticBody2D" parent="." unique_id=1893011365]
-position = Vector2(366.2995, -96.55593)
+position = Vector2(239.85718, -87.3601)
 collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rejas" unique_id=942852746]
-position = Vector2(0, 0.3831787)
+position = Vector2(-7.663269, 9.962128)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="Sprite2D" type="Sprite2D" parent="Rejas" unique_id=1841134587]
-position = Vector2(-6.8968506, 1.5323887)
+position = Vector2(-11.877991, 11.111389)
+scale = Vector2(0.625, 0.625)
 texture = ExtResource("5_vdplt")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
