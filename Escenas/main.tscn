@@ -15,7 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://b4x4eu2xmyuse" path="res://Assets/Tileset/spike_0.png" id="11_7ndum"]
 [ext_resource type="Texture2D" uid="uid://563ln5lt8fdi" path="res://Assets/Tileset/spike_1.png" id="12_c7rjx"]
 [ext_resource type="Texture2D" uid="uid://dk6s8qjbq1ycr" path="res://Assets/Tileset/spike_2.png" id="13_3pd83"]
-[ext_resource type="Script" uid="uid://dxonvuswiap45" path="res://Scripts/pinches.gd" id="13_sqh0o"]
+[ext_resource type="PackedScene" uid="uid://bwj3l2tj1jiel" path="res://Escenas/pinches.tscn" id="13_sqh0o"]
+[ext_resource type="Script" uid="uid://ch25dr462vss1" path="res://Escenas/pinches_1.gd" id="14_0kmc4"]
 [ext_resource type="Texture2D" uid="uid://cs4pbhbtwki34" path="res://Assets/Tileset/spike_3.png" id="14_c8ola"]
 [ext_resource type="Texture2D" uid="uid://6lxijax8qta3" path="res://Assets/Tileset/torch_1.png" id="15_c7rjx"]
 [ext_resource type="Texture2D" uid="uid://c273nrjdlwg22" path="res://Assets/Tileset/spike_4.png" id="15_y8e5y"]
@@ -28,9 +29,6 @@
 [ext_resource type="PackedScene" uid="uid://dciwj5vrkpnki" path="res://Escenas/vampiresa.tscn" id="23_xgh3l"]
 [ext_resource type="PackedScene" uid="uid://dggnb81013ost" path="res://Escenas/libro.tscn" id="27_h1sxn"]
 [ext_resource type="PackedScene" uid="uid://mvv146bhm3eb" path="res://Escenas/carta.tscn" id="28_sqh0o"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
-size = Vector2(27.891851, 13.297298)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -187,30 +185,9 @@ position = Vector2(572, 12)
 scale = Vector2(1.576, 1.576)
 texture = ExtResource("8_ktoa8")
 
-[node name="Pinches" type="Area2D" parent="." unique_id=682137487]
+[node name="Pinches" parent="." unique_id=440158532 instance=ExtResource("13_sqh0o")]
 position = Vector2(606, -66)
-scale = Vector2(3.0833333, 3.0833333)
-collision_layer = 16
-script = ExtResource("13_sqh0o")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pinches" unique_id=507550568]
-position = Vector2(-7.4594116, -0.48648643)
-shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="Spikes down" type="AnimatedSprite2D" parent="Pinches" unique_id=687734608]
-sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"No"
-
-[node name="Spikes down2" type="AnimatedSprite2D" parent="Pinches" unique_id=1451235951]
-position = Vector2(-14.918915, -0.32432365)
-sprite_frames = SubResource("SpriteFrames_g4v7s")
-animation = &"Sí"
-
-[node name="Timer" type="Timer" parent="Pinches" unique_id=1270096160]
-
-[node name="Timer2" type="Timer" parent="Pinches" unique_id=912530117]
-
-[node name="Timer3" type="Timer" parent="Pinches" unique_id=678007012]
+script = ExtResource("14_0kmc4")
 
 [node name="Spikes down3" type="AnimatedSprite2D" parent="." unique_id=524476030]
 position = Vector2(602, -152)
@@ -398,10 +375,5 @@ Emociones esperadas : curiosidad, incertidumbre, sorpresa y desconcierto ante la
 
 [node name="carta" parent="." unique_id=248332298 instance=ExtResource("28_sqh0o")]
 position = Vector2(280, -1936)
-
-[connection signal="body_entered" from="Pinches" to="Pinches" method="_on_body_entered"]
-[connection signal="timeout" from="Pinches/Timer" to="Pinches" method="_on_timer_timeout"]
-[connection signal="timeout" from="Pinches/Timer2" to="Pinches" method="_on_timer_2_timeout"]
-[connection signal="timeout" from="Pinches/Timer3" to="Pinches" method="_on_timer_3_timeout"]
 
 [editable path="paredes"]

@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://bwj3l2tj1jiel"]
+
+[ext_resource type="Script" uid="uid://kgn1hg3vdw4c" path="res://Escenas/pinches.gd" id="1_0qocd"]
+[ext_resource type="Texture2D" uid="uid://b4x4eu2xmyuse" path="res://Assets/Tileset/spike_0.png" id="2_28qff"]
+[ext_resource type="Texture2D" uid="uid://563ln5lt8fdi" path="res://Assets/Tileset/spike_1.png" id="3_fctwm"]
+[ext_resource type="Texture2D" uid="uid://dk6s8qjbq1ycr" path="res://Assets/Tileset/spike_2.png" id="4_uegml"]
+[ext_resource type="Texture2D" uid="uid://cs4pbhbtwki34" path="res://Assets/Tileset/spike_3.png" id="5_1qgna"]
+[ext_resource type="Texture2D" uid="uid://c273nrjdlwg22" path="res://Assets/Tileset/spike_4.png" id="6_rjpts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(27.891851, 13.297298)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 23.0,
+"texture": ExtResource("2_28qff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fctwm")
+}],
+"loop": 0,
+"name": &"No",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_uegml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1qgna")
+}, {
+"duration": 22.0,
+"texture": ExtResource("6_rjpts")
+}],
+"loop": 1,
+"name": &"Sí",
+"speed": 24.0
+}]
+
+[node name="Pinches" type="Area2D" unique_id=440158532]
+scale = Vector2(3.0833333, 3.0833333)
+collision_layer = 16
+script = ExtResource("1_0qocd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2095241997]
+position = Vector2(-7.4594116, -0.48648643)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Spikes down" type="AnimatedSprite2D" parent="." unique_id=1846277553]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"No"
+
+[node name="Spikes down2" type="AnimatedSprite2D" parent="." unique_id=754159189]
+position = Vector2(-14.918915, -0.32432365)
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"No"
+
+[node name="Timer" type="Timer" parent="." unique_id=1503878430]
+
+[node name="Timer2" type="Timer" parent="." unique_id=1930074551]
+
+[node name="Timer3" type="Timer" parent="." unique_id=416345999]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]
+[connection signal="timeout" from="Timer3" to="." method="_on_timer_3_timeout"]

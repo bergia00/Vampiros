@@ -89,13 +89,12 @@ func _on_cd_cruz_timeout() -> void:
 	CruzLista = true
 
 
+		
 func _on_hurtbox_area_entered(area: Area2D):
-	if Invulnerable == false and Escudo == false:
-		Invulnerable  = true
-		$Invulnerabilidad.start()
+	if Invulnerable == false and Escudo == false and area.Daño > 0:
 		Vida -= area.Daño
 		ActualizarVida()
-	elif Invulnerable == false and Escudo == true:
+	elif Invulnerable == false and Escudo == true and area.Daño > 0:
 		Escudo = false
 		$Escudo.play("EscudoRoto")
 func _on_invulnerabilidad_timeout() -> void:

@@ -1,13 +1,12 @@
 extends Area2D
 
-var Pincha = false
 var Daño = 0
 
 func _ready() -> void:
 	Pinches()
 
 func Pinches():
-	Pincha = false
+	Daño = 0
 	$Timer.start()
 
 func _on_timer_timeout() -> void:
@@ -17,7 +16,7 @@ func _on_timer_timeout() -> void:
 	$Timer2.start()
 
 func _on_timer_2_timeout() -> void:
-	Pincha = true
+	Daño = 10
 	$"Spikes down".play("Sí")
 	$"Spikes down2".play("Sí")
 	$"Spikes down".play_backwards("Sí")
@@ -26,15 +25,8 @@ func _on_timer_2_timeout() -> void:
 	$Timer3.start()
 	
 func _on_timer_3_timeout() -> void:
-	Pincha = false
+	Daño = 0
 	$"Spikes down".play_backwards("No")
 	$"Spikes down2".play_backwards("No")
 	$Timer3.stop()
 	Pinches()
-
-func _on_body_entered(body: Node2D) -> void:
-	if Pincha == true:
-		Daño = 10
-	
-	if Pincha == false:
-		Daño = 0
