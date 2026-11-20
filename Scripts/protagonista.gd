@@ -95,6 +95,7 @@ func _on_cd_cruz_timeout() -> void:
 	CruzLista = true
 
 
+		
 func _on_hurtbox_area_entered(area: Area2D):
 	print("Área detectada: ", area.name)
 	print("Pertenece a: ", area.get_parent().name)
