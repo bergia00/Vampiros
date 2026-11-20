@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://mvv146bhm3eb"]
+
+[ext_resource type="Script" uid="uid://dts2uh1aq1ptx" path="res://carta.gd" id="1_bhn44"]
+[ext_resource type="Texture2D" uid="uid://cphn24rxemp1k" path="res://Assets/libro2.png" id="2_pq6sv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_flvvg"]
+size = Vector2(37.41941, 48.267864)
+
+[node name="carta" type="Area2D" unique_id=248332298]
+scale = Vector2(0.725, 0.725)
+script = ExtResource("1_bhn44")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1901005005]
+texture = ExtResource("2_pq6sv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2004894055]
+position = Vector2(-0.4999994, -0.49999958)
+rotation = 0.86219263
+shape = SubResource("RectangleShape2D_flvvg")
+
+[node name="tecla" type="Label" parent="." unique_id=1663879158]
+offset_left = -14.0
+offset_top = -41.0
+offset_right = 21.0
+offset_bottom = -18.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=863591030]
+layer = 10
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1678188509]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -74.0
+offset_top = -209.0
+offset_right = 65.0
+offset_bottom = -671.0
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer" unique_id=1214590017]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer" unique_id=1540546683]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+autowrap_mode = 3

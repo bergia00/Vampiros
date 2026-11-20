@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://bg5i82yg760yj" path="res://Assets/Tileset/candleA_04.png" id="22_h1sxn"]
 [ext_resource type="PackedScene" uid="uid://dciwj5vrkpnki" path="res://Escenas/vampiresa.tscn" id="23_xgh3l"]
 [ext_resource type="PackedScene" uid="uid://dggnb81013ost" path="res://Escenas/libro.tscn" id="27_h1sxn"]
+[ext_resource type="PackedScene" uid="uid://mvv146bhm3eb" path="res://Escenas/carta.tscn" id="28_sqh0o"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -372,5 +373,8 @@ Luego del último enfrentamiento se llega a esta habitación aislada y pequeña.
 Esta habitación que funciona como momento de pausa despues del enfrentamiento  con la Vampira y se busca trasladar la atención del desafío jugable a la narrativa. 
 
 Emociones esperadas : curiosidad, incertidumbre, sorpresa y desconcierto ante la revelación."
+
+[node name="carta" parent="." unique_id=248332298 instance=ExtResource("28_sqh0o")]
+position = Vector2(280, -1936)
 
 [editable path="paredes"]
