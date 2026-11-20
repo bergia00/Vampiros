@@ -41,15 +41,12 @@ func on_hit(daño_recibido: int):
 
 func Disparar():
 	var instanciaProyectil = PROYECTIL.instantiate()
-	instanciaProyectil.Tirador = self
-	instanciaProyectil.Daño = Daño
-	instanciaProyectil.Direccion = (Jugador.global_position - global_position).normalized()
-	instanciaProyectil.rotation = instanciaProyectil.Direccion.angle()
-	get_parent().add_child(instanciaProyectil)
-	instanciaProyectil.global_position = global_position
+	instanciaProyectil.position = position.direction_to(Jugador.position) * 1
+	instanciaProyectil.Direccion = (Jugador.position - position).normalized()
+	instanciaProyectil.rotation = position.direction_to(Jugador.position).angle()
+	add_child(instanciaProyectil)
 	$CD_Proyectil.start(CooldownDisparo)
 	PuedeDisparar = false
-	
 func _on_timer_timeout() -> void:
 	PuedeAtacar = true
 
