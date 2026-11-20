@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://uyhbnosye3ye"]
+
+[ext_resource type="Script" uid="uid://n5cvb2rw0np2" path="res://Scripts/botón.gd" id="1_8025c"]
+[ext_resource type="Texture2D" uid="uid://dwmeroncfw2kn" path="res://Assets/Botón2.png" id="2_x1ojq"]
+[ext_resource type="Texture2D" uid="uid://3mxxtdg553b0" path="res://Assets/Botón3.png" id="3_vau8o"]
+[ext_resource type="Texture2D" uid="uid://bxx5iyogbaxw" path="res://Assets/Botón1.png" id="4_iyvxt"]
+[ext_resource type="Texture2D" uid="uid://4t28il3ipo37" path="res://Assets/rejas.png" id="5_vdplt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7numd"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("2_x1ojq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vau8o")
+}],
+"loop": 0,
+"name": &"Apretado",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_iyvxt")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5s0fj"]
+size = Vector2(12.2610655, 12.261038)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(82.76221, 49.810486)
+
+[node name="Botón" type="Area2D" unique_id=361627626]
+scale = Vector2(1.3049437, 1.3049437)
+script = ExtResource("1_8025c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=541874002]
+texture_filter = 1
+position = Vector2(-1.9073486e-06, -1.5326064)
+scale = Vector2(1.3930644, 1.393064)
+sprite_frames = SubResource("SpriteFrames_7numd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076438173]
+position = Vector2(-0.7663269, -3.831604)
+shape = SubResource("RectangleShape2D_5s0fj")
+
+[node name="Rejas" type="StaticBody2D" parent="." unique_id=1893011365]
+position = Vector2(366.2995, -96.55593)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rejas" unique_id=942852746]
+position = Vector2(0, 0.3831787)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="Rejas" unique_id=1841134587]
+position = Vector2(-6.8968506, 1.5323887)
+texture = ExtResource("5_vdplt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
