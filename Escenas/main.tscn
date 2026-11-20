@@ -337,7 +337,7 @@ Estaca : arma cuerpo a cuerpo , capaz de eliminar a enemigos de un solo golpe, p
 "
 
 [node name="libro5" parent="." unique_id=1072202438 instance=ExtResource("27_h1sxn")]
-position = Vector2(724, -575)
+position = Vector2(703, -540)
 texto = "Room 2 
 Incorporación de pequeños obstáculos que interrumpirán el recorrido, en conjuto con un enemigo que te persigue y te ataca.
 
@@ -346,7 +346,7 @@ Esta parte busca aumentar progresivamente lasensacion de peligro.
 Emociones esperadas : Inquietud, sorpresa y un ligero aumento de tensión."
 
 [node name="libro2" parent="." unique_id=283055511 instance=ExtResource("27_h1sxn")]
-position = Vector2(784, -936)
+position = Vector2(1041, -815)
 texto = "Room 3 
 Exploración, persecución y resolución de obstáculos. Se presentán 3 caminos diferentes, uno de ellos es el camino que ter permite avanzar, mientras qie uno no llega ningún lado y el restante permite encontrar un botón necesario para desbloquear el camino principal. Mientras  buscás la habitación correcta, serás perseguido por un enemigo. 
 
@@ -365,11 +365,12 @@ Con el objetivo de que el jugador demuestre las habilidades aprendidas y encuent
 Emociones esperadas : Tensión elevada, ansiedad, presión y satisfacción al derrotar a la condesa."
 
 [node name="libro4" parent="." unique_id=1459204780 instance=ExtResource("27_h1sxn")]
-position = Vector2(353, -2165)
+position = Vector2(363, -2152)
 texto = "Room 5 
 Luego del último enfrentamiento se llega a esta habitación aislada y pequeña.No hay enemigo , ni combate, solo objetos que se te hacen familiares, con elementos interactivos y sobre todo el más relevante, una carta de tu hermana que presenta una gran revelación. 
 
 Esta habitación que funciona como momento de pausa despues del enfrentamiento  con la Vampira y se busca trasladar la atención del desafío jugable a la narrativa. 
 
 Emociones esperadas : curiosidad, incertidumbre, sorpresa y desconcierto ante la revelación."
+
 [editable path="paredes"]

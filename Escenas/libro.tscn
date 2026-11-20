@@ -84,7 +84,7 @@ font_size = 23
 font_color = Color(0.7732493, 0.728112, 0.456083, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_h2wij"]
-font = ExtResource("3_w0cnm")
+font_size = 21
 font_color = Color(0.81553286, 0.6994123, 0.4179022, 1)
 
 [node name="libro" type="Area2D" unique_id=665199372]
