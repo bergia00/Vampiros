@@ -29,7 +29,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5s0fj"]
-size = Vector2(12.2610655, 12.261038)
+size = Vector2(9.195799, 9.195764)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(53.642162, 32.185287)
@@ -40,12 +40,12 @@ script = ExtResource("1_8025c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=541874002]
 texture_filter = 1
-position = Vector2(-1.9073486e-06, -1.5326064)
-scale = Vector2(1.3930644, 1.393064)
+position = Vector2(0.38315845, -1.1494485)
+scale = Vector2(1.0268643, 1.026864)
 sprite_frames = SubResource("SpriteFrames_7numd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2076438173]
-position = Vector2(-0.7663269, -3.831604)
+position = Vector2(-9.135206e-08, -2.2989671)
 shape = SubResource("RectangleShape2D_5s0fj")
 
 [node name="Rejas" type="StaticBody2D" parent="." unique_id=1893011365]
