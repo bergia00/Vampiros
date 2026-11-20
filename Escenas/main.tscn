@@ -1,21 +1,21 @@
 [gd_scene format=3 uid="uid://c867cj8j2jlcd"]
 
-[ext_resource type="PackedScene" path="res://Escenas/piso.tscn" id="1_eyox0"]
-[ext_resource type="PackedScene" path="res://Escenas/tile_map_layer.tscn" id="2_8qua0"]
+[ext_resource type="PackedScene" uid="uid://b8y4bijc3rewj" path="res://Escenas/piso.tscn" id="1_eyox0"]
+[ext_resource type="PackedScene" uid="uid://dj73k0s34qwyy" path="res://Escenas/tile_map_layer.tscn" id="2_8qua0"]
 [ext_resource type="PackedScene" uid="uid://deul3lp57biar" path="res://Escenas/castillo.tscn" id="2_crgrh"]
-[ext_resource type="PackedScene" path="res://Escenas/deco.tscn" id="3_gy4cw"]
+[ext_resource type="PackedScene" uid="uid://dd8g147rpf616" path="res://Escenas/deco.tscn" id="3_gy4cw"]
 [ext_resource type="PackedScene" uid="uid://bt6ypmoqkkrmg" path="res://Escenas/tumba_1.tscn" id="3_s2ilj"]
-[ext_resource type="PackedScene" path="res://Escenas/arriba_de_todo.tscn" id="4_h1sxn"]
+[ext_resource type="PackedScene" uid="uid://dmii0yjf357a4" path="res://Escenas/arriba_de_todo.tscn" id="4_h1sxn"]
 [ext_resource type="PackedScene" uid="uid://btj2eelc0dues" path="res://Escenas/tumba_2.tscn" id="4_ktoa8"]
 [ext_resource type="PackedScene" uid="uid://bm4fauend1rwb" path="res://Escenas/protagonista.tscn" id="5_1md0r"]
 [ext_resource type="PackedScene" uid="uid://bw85ci5no23r" path="res://Escenas/paredes.tscn" id="5_a165e"]
-[ext_resource type="PackedScene" path="res://Escenas/botón.tscn" id="6_8qua0"]
+[ext_resource type="PackedScene" uid="uid://uyhbnosye3ye" path="res://Escenas/botón.tscn" id="6_8qua0"]
 [ext_resource type="PackedScene" uid="uid://c1s1yowuslelb" path="res://Escenas/enemigo.tscn" id="6_n3qho"]
 [ext_resource type="Texture2D" uid="uid://dl4fo08vubcj4" path="res://Assets/arco.png" id="8_ktoa8"]
 [ext_resource type="Texture2D" uid="uid://b4x4eu2xmyuse" path="res://Assets/Tileset/spike_0.png" id="11_7ndum"]
 [ext_resource type="Texture2D" uid="uid://563ln5lt8fdi" path="res://Assets/Tileset/spike_1.png" id="12_c7rjx"]
 [ext_resource type="Texture2D" uid="uid://dk6s8qjbq1ycr" path="res://Assets/Tileset/spike_2.png" id="13_3pd83"]
-[ext_resource type="PackedScene" path="res://Escenas/pinches_1.tscn" id="13_gy4cw"]
+[ext_resource type="PackedScene" uid="uid://by20xj3dj3dam" path="res://Escenas/pinches_1.tscn" id="13_gy4cw"]
 [ext_resource type="Texture2D" uid="uid://cs4pbhbtwki34" path="res://Assets/Tileset/spike_3.png" id="14_c8ola"]
 [ext_resource type="Texture2D" uid="uid://6lxijax8qta3" path="res://Assets/Tileset/torch_1.png" id="15_c7rjx"]
 [ext_resource type="Texture2D" uid="uid://c273nrjdlwg22" path="res://Assets/Tileset/spike_4.png" id="15_y8e5y"]
@@ -372,5 +372,4 @@ Luego del último enfrentamiento se llega a esta habitación aislada y pequeña.
 Esta habitación que funciona como momento de pausa despues del enfrentamiento  con la Vampira y se busca trasladar la atención del desafío jugable a la narrativa. 
 
 Emociones esperadas : curiosidad, incertidumbre, sorpresa y desconcierto ante la revelación."
-
 [editable path="paredes"]
