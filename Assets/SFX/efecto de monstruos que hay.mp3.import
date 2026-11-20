@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chy7idosgeh3x"
+path="res://.godot/imported/efecto de monstruos que hay.mp3-7b49e54e7b6eea147027d243269b8d8d.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/efecto de monstruos que hay.mp3"
+dest_files=["res://.godot/imported/efecto de monstruos que hay.mp3-7b49e54e7b6eea147027d243269b8d8d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

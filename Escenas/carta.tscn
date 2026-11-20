@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://mvv146bhm3eb"]
 
-[ext_resource type="Script" uid="uid://dts2uh1aq1ptx" path="res://carta.gd" id="1_bhn44"]
+[ext_resource type="Script" uid="uid://dts2uh1aq1ptx" path="res://Scripts/carta.gd" id="1_bhn44"]
 [ext_resource type="Texture2D" uid="uid://cphn24rxemp1k" path="res://Assets/libro2.png" id="2_pq6sv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_flvvg"]

@@ -9,8 +9,14 @@ var PuedeDisparar =  true
 var Daño = 20
 var Vida = 500
 var CooldownDisparo = 5
+var PrimeraRisa = true
+
 func _process(_delta: float) -> void:
 	var DistanciaJugador = position.distance_to(Jugador.position)
+	if PrimeraRisa and DistanciaJugador < 300:
+		$Risa.play()
+		PrimeraRisa = false
+		
 	if DistanciaJugador < 75:
 		Atacar()
 	elif DistanciaJugador < 200 and PuedeDisparar:
@@ -21,6 +27,7 @@ func _process(_delta: float) -> void:
 		pass
 	if Vida <= 0:
 		queue_free()
+
 func Perseguir():
 	velocity = position.direction_to(Jugador.position) * velocidad
 	move_and_slide()
@@ -59,3 +66,8 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 
 func _on_cd_proyectil_timeout() -> void:
 	PuedeDisparar = true
+	
+func _on_cd_risa_timeout() -> void:
+	if Jugador and position.distance_to(Jugador.position) < 200:
+		$Risa.play()
+		

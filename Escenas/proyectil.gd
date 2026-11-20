@@ -14,7 +14,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 	Velocidad = 0
 	$AnimatedSprite2D.play("Splash")
-
+	$SonidoGolpe.play()
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Splash":
 		queue_free()
