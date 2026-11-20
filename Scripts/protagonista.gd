@@ -12,6 +12,7 @@ var VidaMaxima := 100
 var Vida := VidaMaxima
 var Invulnerable = false
 var Escudo = false
+var ultima_direccion = Vector2() 
 func _ready() -> void:
 	ActualizarVida()
 	$CDBarAgua.max_value = CooldownAgua
@@ -20,6 +21,9 @@ func _ready() -> void:
 func _physics_process(delta):
 	Mover()
 	ActualizarCooldowns()
+	if direccion != Vector2.ZERO:
+		ultima_direccion = direccion.normalized()
+	Animar()
 	if Input.is_action_just_pressed("TirarAgua") and AguaLista == true:
 		TirarAgua()
 	if  Input.is_action_just_pressed("UsarEstaca") and EstacaLista == true:
@@ -30,23 +34,33 @@ func Mover():
 	direccion.x = Input.get_action_strength("mover_derecha") - Input.get_action_strength("mover_izquierda")
 	direccion.y = Input.get_action_strength("mover_abajo") - Input.get_action_strength("mover_arriba")
 	velocity = direccion.normalized() * velocidad
-	if Input.is_action_just_pressed("mover_derecha"):
-		$Sprite2D.flip_h = false
-	elif Input.is_action_just_pressed("mover_izquierda"):
-		$Sprite2D.flip_h = true
 	move_and_slide()
-
+func Animar():
+	if direccion == Vector2.ZERO:
+		$AnimatedSprite2D.animation = "mover_abajo"
+		$AnimatedSprite2D.frame = 0
+		$AnimatedSprite2D.pause()
+		return
+	# Si te movés en diagonal, gana el eje con más peso
+	if abs(direccion.x) > abs(direccion.y):
+		if direccion.x > 0:
+			$AnimatedSprite2D.play("mover_derecha")
+		else:
+			$AnimatedSprite2D.play("mover_izquierda")
+	else:
+		if direccion.y > 0:
+			$AnimatedSprite2D.play("mover_abajo")
+		else:
+			$AnimatedSprite2D.play("mover_arriba")
+	if Escudo == true:
+		$Escudo.play("EscudoActivo")
+	
 func TirarAgua():
 	AguaLista = false
 	$CD_Agua.start(CooldownAgua)
 	var instanciaAgua = AGUA.instantiate()
 	instanciaAgua.position = position
-	if direccion != Vector2(0, 0): 
-		instanciaAgua.Direccion = direccion.normalized()
-	elif direccion == Vector2(0, 0) and $Sprite2D.flip_h == true:
-		instanciaAgua.Direccion = Vector2(-1, 0)
-	else:
-		instanciaAgua.Direccion = Vector2(1, 0)
+	instanciaAgua.Direccion = ultima_direccion
 	add_child(instanciaAgua)
 	
 func UsarEstaca():
@@ -56,6 +70,8 @@ func UsarCruz():
 	CruzLista = false
 	$CD_Cruz.start(CooldownCruz)
 	Escudo = true
+	$Escudo.visible = true
+	$Escudo.play("EscudoActivo")
 func ActualizarVida():
 	Vida = clampi(Vida, 0, VidaMaxima)
 	$BarraVida.value = Vida
@@ -81,6 +97,10 @@ func _on_hurtbox_area_entered(area: Area2D):
 		ActualizarVida()
 	elif Invulnerable == false and Escudo == true:
 		Escudo = false
-
+		$Escudo.play("EscudoRoto")
 func _on_invulnerabilidad_timeout() -> void:
 	Invulnerable = false
+
+
+func _on_escudo_animation_finished() -> void:
+	$Escudo.visible = false
