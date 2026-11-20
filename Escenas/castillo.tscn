@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://deul3lp57biar"]
 
 [ext_resource type="Texture2D" uid="uid://6ysdcb66hcu6" path="res://Assets/castillo.png" id="1_s8tyg"]
+[ext_resource type="Texture2D" uid="uid://dkgi0nd3tulk7" path="res://Assets/entrada.png" id="2_dp5f4"]
 
 [node name="Castillo" type="Sprite2D" unique_id=878496323]
 texture_filter = 1
 scale = Vector2(1.5761317, 1.5761317)
 texture = ExtResource("1_s8tyg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=589607919]
+z_index = 2
+texture = ExtResource("2_dp5f4")
 
 [node name="Area2D" type="StaticBody2D" parent="." unique_id=2021075313]
 collision_layer = 4
