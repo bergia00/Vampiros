@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dcfkhu0jbuh14"
+path="res://.godot/imported/sonido de risa de vampira.mp3-fac41d64da324d7995c637bc07448f73.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/sonido de risa de vampira.mp3"
+dest_files=["res://.godot/imported/sonido de risa de vampira.mp3-fac41d64da324d7995c637bc07448f73.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

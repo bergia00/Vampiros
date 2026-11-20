@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dlupb5fs4bjfb"
+path="res://.godot/imported/efecto que hacen los enemigos vampiros cuando golpean.mp3-d16149691cf94742365378c572615fe3.mp3str"
+
+[deps]
+
+source_file="res://Assets/SFX/efecto que hacen los enemigos vampiros cuando golpean.mp3"
+dest_files=["res://.godot/imported/efecto que hacen los enemigos vampiros cuando golpean.mp3-d16149691cf94742365378c572615fe3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
