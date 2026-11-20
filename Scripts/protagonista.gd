@@ -18,7 +18,7 @@ func _ready() -> void:
 	$CDBarAgua.max_value = CooldownAgua
 	$CDBarEstaca.max_value = CooldownEstaca
 	$CDBarCruz.max_value = CooldownCruz
-func _physics_process(delta):
+func _physics_process(_delta):
 	Mover()
 	ActualizarCooldowns()
 	if direccion != Vector2.ZERO:

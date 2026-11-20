@@ -7,7 +7,7 @@ var CooldownAtaque = 2
 const ATAQUE = preload("res://Escenas/ataque_enemigo.tscn")
 var Daño = 10
 var Vida = 100
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var DistanciaJugador = position.distance_to(Jugador.position)
 	if DistanciaJugador < 75:
 		Atacar()
@@ -30,8 +30,8 @@ func Atacar():
 		instanciaAtaque.rotation = position.direction_to(Jugador.position).angle()
 		instanciaAtaque.Daño = Daño
 		add_child(instanciaAtaque)
-func on_hit(Daño: int):
-	Vida -= Daño
+func on_hit(daño_recibido: int):
+	Vida -= daño_recibido
 	print(Vida)
 func _on_timer_timeout() -> void:
 	PuedeAtacar = true

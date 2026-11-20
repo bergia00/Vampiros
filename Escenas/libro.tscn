@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://dggnb81013ost"]
+
+[ext_resource type="Script" uid="uid://bl2rt5o4ipryl" path="res://Scripts/libro.gd" id="1_xnffk"]
+[ext_resource type="Texture2D" uid="uid://coi556ns4bh4n" path="res://Assets/libroanimación.png" id="2_w0cnm"]
+[ext_resource type="FontFile" uid="uid://7qy3wdxrsd05" path="res://Assets/fuentes/minecraft/Minecraft.ttf" id="3_w0cnm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_75tst"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(640, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cmyi"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(560, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4x2u"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(480, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_get0b"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(400, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7j1ny"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(320, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxh4q"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc8vn"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh7v5"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pgi2j"]
+atlas = ExtResource("2_w0cnm")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flvvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_75tst")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4cmyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4x2u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_get0b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7j1ny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxh4q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qc8vn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh7v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pgi2j")
+}],
+"loop": 0,
+"name": &"abrir",
+"speed": 13.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yatlo"]
+size = Vector2(36, 32)
+
+[sub_resource type="LabelSettings" id="LabelSettings_flvvg"]
+font = ExtResource("3_w0cnm")
+font_size = 23
+font_color = Color(0.7732493, 0.728112, 0.456083, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h2wij"]
+font = ExtResource("3_w0cnm")
+font_color = Color(0.81553286, 0.6994123, 0.4179022, 1)
+
+[node name="libro" type="Area2D" unique_id=665199372]
+script = ExtResource("1_xnffk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=890543376]
+scale = Vector2(0.785, 0.785)
+sprite_frames = SubResource("SpriteFrames_flvvg")
+animation = &"abrir"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1052035687]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_yatlo")
+
+[node name="tecla" type="Label" parent="." unique_id=710738449]
+offset_left = -5.0
+offset_top = -37.0
+offset_right = 35.0
+offset_bottom = -14.0
+text = "F"
+label_settings = SubResource("LabelSettings_flvvg")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1882150668]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -148.0
+offset_top = -163.0
+offset_right = 1172.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.25, 0.25)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=2074249488]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer" unique_id=460600591]
+visibility_layer = 524289
+custom_minimum_size = Vector2(600, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.84654003, 0.6816018, 0.6403665, 1)
+theme_override_font_sizes/font_size = 22
+text = "lllllldsdsd
+"
+label_settings = SubResource("LabelSettings_h2wij")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

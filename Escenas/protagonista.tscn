@@ -246,7 +246,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Protagonista" type="CharacterBody2D" unique_id=541571990]
+[node name="Protagonista" type="CharacterBody2D" unique_id=541571990 groups=["jugador"]]
 z_index = 1
 script = ExtResource("1_xmmqn")
 

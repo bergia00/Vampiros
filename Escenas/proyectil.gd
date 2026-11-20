@@ -7,7 +7,7 @@ var Daño = 20
 func _physics_process(delta: float) -> void:
 	position += Direccion * Velocidad * delta
 	
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	Velocidad = 70
 	$AnimatedSprite2D.play("Splash")
 	
