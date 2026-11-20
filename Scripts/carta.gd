@@ -2,15 +2,14 @@ extends Area2D
 @export_multiline var texto: String = ""
 
 @onready var tecla: Label = $tecla
-@onready var panel: Control = $CanvasLayer/PanelContainer
-@onready var label: Label = $CanvasLayer/PanelContainer/MarginContainer/Label
+@onready var panel: Control = $PanelContainer/MarginContainer
+@onready var label: Label = $PanelContainer/MarginContainer/Label
 
 var jugador_cerca := false
 var abierto := false
 
 func _ready() -> void:
 	tecla.hide()
-	panel.hide()
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
 

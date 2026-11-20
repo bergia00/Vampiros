@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://c8337hp8tg0uy"]
 
 [ext_resource type="Texture2D" uid="uid://doy5k6v17m6s6" path="res://Assets/Misc/gems/spritesheets/gems-spritesheet.png" id="1_bimne"]
-[ext_resource type="Texture2D" uid="uid://cmnqj7yvet0q8" path="res://Assets/Baratija_Cruz_de_madera.webp" id="2_bimne"]
+[ext_resource type="Texture2D" uid="uid://hmsmmp6ik6lb" path="res://Assets/cruz.png" id="2_bimne"]
+[ext_resource type="FontFile" uid="uid://7qy3wdxrsd05" path="res://Assets/fuentes/minecraft/Minecraft.ttf" id="3_t4ip4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x03y8"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -14,6 +15,10 @@ corner_detail = 2
 [sub_resource type="AtlasTexture" id="AtlasTexture_dd11d"]
 atlas = ExtResource("1_bimne")
 region = Rect2(0, 64, 16, 16)
+
+[sub_resource type="LabelSettings" id="LabelSettings_dbnvi"]
+font = ExtResource("3_t4ip4")
+font_color = Color(1, 0.9489947, 0.9274257, 1)
 
 [node name="CDBarCruz" type="ProgressBar" unique_id=1015580819]
 z_index = 1
@@ -33,14 +38,15 @@ scale = Vector2(2.0625, 2.0625)
 texture = SubResource("AtlasTexture_dd11d")
 
 [node name="Cruz" type="Sprite2D" parent="." unique_id=415868656]
-position = Vector2(13, 15)
-scale = Vector2(0.10833334, 0.10833334)
+position = Vector2(15.999994, 16.000002)
+scale = Vector2(0.7630206, 0.716146)
 texture = ExtResource("2_bimne")
 
 [node name="Label" type="Label" parent="." unique_id=269021924]
 layout_mode = 0
 offset_left = 19.0
-offset_top = 10.0
+offset_top = 18.0
 offset_right = 35.0
-offset_bottom = 33.0
+offset_bottom = 41.0
 text = "Q"
+label_settings = SubResource("LabelSettings_dbnvi")

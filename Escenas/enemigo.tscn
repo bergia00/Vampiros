@@ -1,10 +1,63 @@
 [gd_scene format=3 uid="uid://c1s1yowuslelb"]
 
 [ext_resource type="Script" uid="uid://dm7mkr4pmlw42" path="res://Escenas/enemigo.gd" id="1_24lda"]
-[ext_resource type="Texture2D" uid="uid://cu6kxetkrpdgq" path="res://Assets/evil guy.png" id="1_x0nhg"]
+[ext_resource type="Texture2D" uid="uid://1r7ioc85tfuq" path="res://Assets/vampirogenerico.png" id="2_24lda"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13grs"]
+atlas = ExtResource("2_24lda")
+region = Rect2(90, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3fwfu"]
+atlas = ExtResource("2_24lda")
+region = Rect2(135, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hbjf"]
+atlas = ExtResource("2_24lda")
+region = Rect2(45, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jc0jm"]
+atlas = ExtResource("2_24lda")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24lda"]
+atlas = ExtResource("2_24lda")
+region = Rect2(0, 0, 45, 45)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_flvvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13grs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3fwfu")
+}],
+"loop": 1,
+"name": &"caminar_derecha",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hbjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jc0jm")
+}],
+"loop": 1,
+"name": &"caminar_izquierda",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24lda")
+}],
+"loop": 1,
+"name": &"stop",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_57qmd"]
-radius = 86.57617
+radius = 79.78516
 height = 388.45264
 
 [node name="Enemigo" type="CharacterBody2D" unique_id=956621102]
@@ -13,12 +66,16 @@ collision_layer = 2
 collision_mask = 7
 script = ExtResource("1_24lda")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1131878112]
-texture = ExtResource("1_x0nhg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1595159078]
+position = Vector2(-20.989584, -16.927097)
+scale = Vector2(8.340278, 9.618055)
+sprite_frames = SubResource("SpriteFrames_flvvg")
+animation = &"stop"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=788295952]
 position = Vector2(-13.333334, 6.6666665)
-rotation = -0.34906584
+rotation = -0.034906585
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_57qmd")
 
 [node name="CD_Ataque" type="Timer" parent="." unique_id=245237467]
@@ -29,7 +86,8 @@ collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox" unique_id=324668478]
 position = Vector2(-13.333334, 6.6666665)
-rotation = -0.34906584
+rotation = -0.073303826
+scale = Vector2(1.2, 1.2)
 shape = SubResource("CapsuleShape2D_57qmd")
 
 [connection signal="timeout" from="CD_Ataque" to="." method="_on_timer_timeout"]
