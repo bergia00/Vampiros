@@ -2,7 +2,7 @@ extends Area2D
 @export_multiline var texto: String = ""
 
 @onready var tecla: Label = $tecla
-@onready var panel: Control = $PanelContainer/MarginContainer
+@onready var panel: Control = $PanelContainer
 @onready var label: Label = $PanelContainer/MarginContainer/Label
 
 var jugador_cerca := false

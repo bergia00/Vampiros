@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://crdaf031njqrj"]
+
+[ext_resource type="Texture2D" uid="uid://4t28il3ipo37" path="res://Assets/rejas.png" id="1_2ffs3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
+size = Vector2(53.642162, 32.185287)
+
+[node name="Rejas" type="StaticBody2D" unique_id=219729262]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1525902603]
+position = Vector2(-7.663269, 9.962128)
+shape = SubResource("RectangleShape2D_yf5fn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1733299863]
+position = Vector2(-11.877991, 11.111389)
+scale = Vector2(0.625, 0.625)
+texture = ExtResource("1_2ffs3")

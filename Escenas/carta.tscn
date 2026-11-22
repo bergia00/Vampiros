@@ -38,15 +38,13 @@ text = "F"
 label_settings = SubResource("LabelSettings_lo201")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=412980064]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 clip_contents = true
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -93.793106
-offset_top = -252.41379
-offset_right = 93.793106
-offset_bottom = -77.241394
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = -50.0
 grow_horizontal = 2
 size_flags_horizontal = 3
 

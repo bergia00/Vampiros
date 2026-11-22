@@ -28,7 +28,9 @@
 [ext_resource type="Texture2D" uid="uid://bg5i82yg760yj" path="res://Assets/Tileset/candleA_04.png" id="22_h1sxn"]
 [ext_resource type="PackedScene" uid="uid://dciwj5vrkpnki" path="res://Escenas/vampiresa.tscn" id="23_xgh3l"]
 [ext_resource type="PackedScene" uid="uid://dggnb81013ost" path="res://Escenas/libro.tscn" id="27_h1sxn"]
+[ext_resource type="PackedScene" uid="uid://crdaf031njqrj" path="res://Escenas/porton.tscn" id="28_hqkrr"]
 [ext_resource type="PackedScene" uid="uid://mvv146bhm3eb" path="res://Escenas/carta.tscn" id="28_sqh0o"]
+[ext_resource type="PackedScene" uid="uid://lf3le6bgi5st" path="res://Escenas/muroinvisible.tscn" id="30_by122"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
 animations = [{
@@ -161,7 +163,7 @@ position = Vector2(284, 153)
 polygon = PackedVector2Array(69.88234, -97.8353, 43.83528, -97.8353, 45.741165, -545.71765, -206.47058, -546.35297, -206.47058, -1153.6941, -31.12941, -1153.6941, -31.12941, -745.2, 97.8353, -745.8353, 96.5647, -1155.6, 274.44705, -1155.6, 273.81174, -745.2, 402.77643, -743.92944, 402.77643, -1155.6, 430.09412, -1154.3293, 430.72937, -1221.6705, 299.8588, -1222.3059, 280.16467, -1222.3059, 280.16467, -1283.9294, 286.51764, -1283.9294, 287.15292, -1336.6588, 90.847046, -1336.0236, 90.847046, -1219.1294, 67.976456, -1218.4941, 67.976456, -1242.6353, 42.564697, -1243.2706, 42.564697, -1202.6117, -57.176468, -1202.6117, -57.811768, -1240.7294, -84.49412, -1240.7294, -106.72941, -1240.7294, -107.3647, -1283.2941, -98.47059, -1283.2941, -99.10588, -1325.8588, -146.75293, -1325.2235, -166.44705, -1325.8588, -167.71764, -1507.553, -160.09412, -1506.9176, -160.09412, -1520.2588, -99.74117, -1520.2588, -99.74117, -1559.0117, -57.811768, -1559.6471, -57.811768, -1598.4, 43.199997, -1599.0353, 42.564697, -1559.6471, 83.858826, -1558.3765, 84.49411, -1517.0824, 287.15292, -1517.7177, 287.15292, -1523.4353, 280.16467, -1523.4353, 280.16467, -1581.8823, 700.09406, -1582.5177, 700.09406, -1220.4, 551.43524, -1221.6705, 551.43524, -1154.9647, 578.7529, -1154.9647, 577.4823, -543.17645, 327.81174, -544.4471, 327.17645, -97.8353, 301.1294, -97.200005, 301.1294, -595.2706, 545.08234, -596.5412, 545.08234, -653.92487, 551.43524, -653.71765, 551.43524, -695.6471, 534.2823, -695.6471, 534.2823, -731.2236, 534.2823, -746.47064, 545.08234, -745.8353, 543.8117, -1114.3059, 531.10583, -1114.3059, 531.10583, -1292.1882, 673.41174, -1292.8235, 673.41174, -1541.2235, 310.6588, -1539.3176, 309.3882, -1459.9059, 85.129395, -1458, 85.129395, -1510.0941, 25.411758, -1510.0941, 25.411758, -1532.3295, -38.117645, -1531.6941, -37.48236, -1512.6353, -99.10588, -1512.6353, -99.74117, -1458.6353, -132.77646, -1458.6353, -132.77646, -1388.7529, -78.776474, -1388.7529, -78.776474, -1385.5764, -71.78824, -1385.5764, -71.78824, -1308.7059, -39.388245, -1308.7059, -39.388245, -1303.6235, -32.592648, -1303.5464, -32.40001, -1269.9529, 16.51764, -1269.9529, 16.51764, -1302.9883, 22.870575, -1302.9883, 22.23529, -1309.3412, 57.176468, -1309.3412, 56.867226, -1384.9752, 64.1647, -1384.9412, 64.1647, -1388.7529, 313.83527, -1389.3882, 313.83527, -1297.2706, 449.7882, -1294.0941, 448.51764, -1111.1294, 435.8117, -1111.1294, 435.8117, -696.2824, 411.03528, -696.2824, 272.54117, -696.91766, 240.14114, -696.91766, 237.59998, -1114.3059, 131.50586, -1114.3059, 130.87057, -698.1883, 123.24704, -698.1883, 105.4588, -698.1883, -40.65883, -697.553, -58.44706, -697.553, -65.435295, -697.553, -64.8, -1086.3529, -64.8, -1110.4941, -174.07059, -1110.4941, -173.43529, -747.7412, -160.7294, -747.7412, -160.09412, -685.48236, -179.78822, -685.48236, -179.78822, -653.0824, -172.79999, -653.0824, -172.79999, -593.36475, 69.247055, -594)
 
 [node name="Protagonista" parent="." unique_id=541571990 instance=ExtResource("5_1md0r")]
-position = Vector2(63, 595)
+position = Vector2(200, 590)
 collision_mask = 6
 
 [node name="Tumba1" parent="." unique_id=2057161449 instance=ExtResource("3_s2ilj")]
@@ -325,6 +327,12 @@ position = Vector2(1059, -2084)
 scale = Vector2(0.205, 0.205)
 Jugador = NodePath("../Protagonista")
 
+[node name="Rejas2" parent="Vampiresa" unique_id=219729262 instance=ExtResource("28_hqkrr")]
+top_level = true
+position = Vector2(742, -2074)
+rotation = 1.5707964
+scale = Vector2(2.08, 2.08)
+
 [node name="libro" parent="." unique_id=665199372 instance=ExtResource("27_h1sxn")]
 position = Vector2(918, 191)
 texto = "Room 1 
@@ -378,6 +386,7 @@ Esta habitación que funciona como momento de pausa despues del enfrentamiento  
 Emociones esperadas : curiosidad, incertidumbre, sorpresa y desconcierto ante la revelación."
 
 [node name="carta" parent="." unique_id=248332298 instance=ExtResource("28_sqh0o")]
+z_index = 9
 position = Vector2(280, -1936)
 texto = "Querida Condesa,
 
@@ -390,4 +399,28 @@ stream = SubResource("AudioStreamMP3_sqh0o")
 volume_db = -13.583
 autoplay = true
 
+[node name="Muroinvisible" parent="." unique_id=462393542 instance=ExtResource("30_by122")]
+
+[node name="Muroinvisible2" parent="." unique_id=60168889 instance=ExtResource("30_by122")]
+position = Vector2(105, 37)
+
+[node name="CollisionShape2D" parent="Muroinvisible2" index="0" unique_id=351474831]
+position = Vector2(-42, 404.00003)
+rotation = 1.5707964
+scale = Vector2(1.945, 1)
+
+[node name="Muroinvisible3" parent="." unique_id=1929773140 instance=ExtResource("30_by122")]
+position = Vector2(461.275, 601)
+scale = Vector2(10, 1)
+
+[node name="Muroinvisible4" parent="." unique_id=229020370 instance=ExtResource("30_by122")]
+position = Vector2(1155, 459)
+rotation = 1.5707964
+scale = Vector2(8.76, 1)
+
+[node name="Muroinvisible5" parent="." unique_id=1192331072 instance=ExtResource("30_by122")]
+position = Vector2(903, -21)
+scale = Vector2(1.5, 1)
+
 [editable path="paredes"]
+[editable path="Muroinvisible2"]

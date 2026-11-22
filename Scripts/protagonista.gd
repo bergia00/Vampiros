@@ -80,8 +80,8 @@ func UsarCruz():
 func ActualizarVida():
 	Vida = clampi(Vida, 0, VidaMaxima)
 	$BarraVida.value = Vida
-	print(Vida)
-
+	if Vida == 0:
+		get_tree().change_scene_to_file("res://Escenas/muerte.tscn")
 func ActualizarCooldowns():
 	$CDBarAgua.value = $CD_Agua.time_left
 	$CDBarCruz.value =  $CD_Cruz.time_left
